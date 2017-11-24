@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo 'Hello, JDK'
                 sh 'java -version'
-                sh 'docker-compose -f docker-compose.yml -f docker-compose.dev.yml up'
+                sh 'docker-compose -f docker-compose.yml  up'
             }
         }
     }
