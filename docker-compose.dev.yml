@@ -5,3 +5,6 @@ services:
     ports:
       - 8888:8888
 
+  gateway:
+    build: gateway
+

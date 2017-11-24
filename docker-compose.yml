@@ -3,7 +3,6 @@ services:
   config:
     env_file:
       - .env
-      CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWOR
     image: sqshq/piggymetrics-config
     restart: always
     logging:
@@ -11,4 +10,18 @@ services:
         max-size: "10m"
         max-file: "10"
 
+  gateway:
+    env_file:
+      - .env
+    image: sqshq/piggymetrics-gateway
+    restart: always
+    depends_on:
+      config:
+        condition: service_healthy
+    ports:
+      - 80:4000
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
  
