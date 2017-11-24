@@ -1,0 +1,7 @@
+version: '2.1'
+services:
+  config:
+    build: config
+    ports:
+      - 8888:8888
+
